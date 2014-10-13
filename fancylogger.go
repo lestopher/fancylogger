@@ -9,13 +9,13 @@ import (
 
 var (
 	// Success is the color of success
-	Success = ansi.ColorCode("green")
+	Success = ansi.ColorCode("green+bh")
 	// Info is the color of information
-	Info = ansi.ColorCode("white")
+	Info = ansi.ColorCode("white+bh")
 	// Error is the color of a meltdown
-	Error = ansi.ColorCode("red")
+	Error = ansi.ColorCode("red+bh")
 	// Warning means gun it
-	Warning = ansi.ColorCode("yellow")
+	Warning = ansi.ColorCode("yellow+bh")
 	// Reset puts the colors back the way it was
 	Reset = ansi.ColorCode("reset")
 )
