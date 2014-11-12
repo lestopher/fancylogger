@@ -15,7 +15,9 @@ var (
 	// Error is the color of a meltdown
 	Error = ansi.ColorCode("red+bh")
 	// Warning means gun it
-	Warning = ansi.ColorCode("yellow+bh")
+	Warning = ansi.ColorCode("yellow")
+	// Trace will give you tracer rounds
+	Trace = ansi.ColorCode("magenta+bh")
 	// Reset puts the colors back the way it was
 	Reset = ansi.ColorCode("reset")
 )
@@ -33,7 +35,7 @@ type FancyLogger struct {
 func NewFancyLogger(traceHandle io.Writer, infoHandle io.Writer,
 	warningHandle io.Writer, errorHandle io.Writer) *FancyLogger {
 	return &FancyLogger{
-		Trace: log.New(traceHandle, "TRACE: ",
+		Trace: log.New(traceHandle, Trace+"TRACE: "+Reset,
 			log.Ldate|log.Ltime|log.Lmicroseconds|log.Lshortfile),
 		Info: log.New(infoHandle, Info+"INFO: "+Reset,
 			log.Ldate|log.Ltime|log.Lmicroseconds),
